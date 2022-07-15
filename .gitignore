@@ -1,0 +1,9 @@
+**/.DS_Store
+**/.idea
+
+Bin
+Lib
+share
+pyvenv.cfg
+
+.Python

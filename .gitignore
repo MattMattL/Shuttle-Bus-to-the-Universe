@@ -1,3 +1,5 @@
+# Normal Files
+
 **/.DS_Store
 **/.idea
 
@@ -7,3 +9,6 @@ share
 pyvenv.cfg
 
 .Python
+
+# Test Files
+**/Test*

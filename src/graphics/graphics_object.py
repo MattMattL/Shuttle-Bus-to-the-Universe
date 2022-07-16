@@ -1,4 +1,6 @@
 import math
+
+from src.utilities.deprecated_marker import Deprecated
 from src.graphics.line_elements import LineElements
 
 class GraphicsObject:
@@ -14,7 +16,6 @@ class GraphicsObject:
 
 	def __init__(self):
 		self._allLineElements = []
-		pass
 
 	# set graphics properties and draw
 	def newLineElements(self):

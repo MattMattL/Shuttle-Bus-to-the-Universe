@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+import math
 
 class LineElements:
 
@@ -42,3 +42,20 @@ class LineElements:
 
 	def getLineElements(self):
 		return self._xCoordinates, self._yCoordinates
+
+	# translations
+	def rotate(self, centerX, centerY, radian):
+		for i in range(len(self._xCoordinates)):
+			newX = math.cos(radian) * (self._xCoordinates[i] - centerX) \
+					- math.sin(radian) * (self._yCoordinates[i] - centerY)
+
+			newY = math.sin(radian) * (self._xCoordinates[i] - centerX) \
+					+ math.cos(radian) * (self._yCoordinates[i] - centerY)
+
+			self._xCoordinates[i] = newX + centerX
+			self._yCoordinates[i] = newY + centerY
+
+	def translate(self, dx, dy):
+		for i in range(len(self._xCoordinates)):
+			self._xCoordinates[i] += dx
+			self._yCoordinates[i] += dy

@@ -2,22 +2,20 @@ from src.board.player import Player
 
 class Land:
 
-	_name: str = None
-	_landInformation: str = None
-	_initialPrice: int = None
-
-	_currentPlayers: [Player] = []
-	_owner: Player = None
-
-	_basicBuildingPrice: int = None
-	_mediumBuildingPrice: int = None
-	_advancedBuildingPrice: int = None
-	_basicBuildingsCount: int = None
-	_mediumBuildingsCount: int = None
-	_advancedBuildingsCount: int = None
-
 	def __init__(self):
-		pass
+		self._name: str = None
+		self._landInformation: str = None
+		self._initialPrice: int = None
+
+		self._currentPlayers: [Player] = []
+		self._owner: Player = None
+
+		self._basicBuildingPrice: int = None
+		self._mediumBuildingPrice: int = None
+		self._advancedBuildingPrice: int = None
+		self._basicBuildingsCount: int = None
+		self._mediumBuildingsCount: int = None
+		self._advancedBuildingsCount: int = None
 
 	def getCurrentPrice(self):
 		pass

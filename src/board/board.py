@@ -5,7 +5,6 @@ from src.board.land import Land
 from src.graphics.graphics_object import GraphicsObject
 from src.database.shape_data import ShapeData
 
-
 class Board:
 
 	def __init__(self):

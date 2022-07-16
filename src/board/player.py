@@ -2,12 +2,10 @@ from src.graphics.graphics_object import GraphicsObject
 
 class Player:
 
-	_moneyOwned = None
-	_currentPosition: int = None
-	_maal: GraphicsObject = None
-
-	_cardsOwned = None
-	_penaltyBuffer = None
-
 	def __init__(self):
-		pass
+		self._moneyOwned = None
+		self._currentPosition: int = None
+		self._maal: GraphicsObject = None
+
+		self._cardsOwned = None
+		self._penaltyBuffer = None

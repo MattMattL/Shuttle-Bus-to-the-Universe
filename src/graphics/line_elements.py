@@ -2,15 +2,14 @@ import math
 
 class LineElements:
 
-	_xCoordinates = []
-	_yCoordinates = []
-
-	_color = 'black'
-	_thickness = 1
-
 	def __init__(self):
 		self._xCoordinates = []
 		self._yCoordinates = []
+
+		self._color = 'black'
+		self._thickness = 1
+
+		# initialisations
 		pass
 
 	# setters

@@ -5,16 +5,17 @@ from src.graphics.line_elements import LineElements
 
 class GraphicsObject:
 
-	_DEGREE_TO_RADIAN_FACTOR = math.pi / 180
-
-	_allLineElements: [LineElements] = []
-	_centerX = 0
-	_centerY = 0
-
-	_currentLineElements: LineElements = None
-	_currentAngle = 0
-
 	def __init__(self):
+		self._DEGREE_TO_RADIAN_FACTOR = math.pi / 180
+
+		self._allLineElements: [LineElements] = []
+		self._centerX = 0
+		self._centerY = 0
+
+		self._currentLineElements: LineElements = None
+		self._currentAngle = 0
+
+		# initialisations
 		self._allLineElements = []
 
 	# set graphics properties and draw

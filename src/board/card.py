@@ -4,11 +4,11 @@ class Card:
 		PAY_MONEY = 1
 		# add more?
 
-	_uniqueIndex: int = None
-	_name: str = None
-	_information: str = None
-
-	_type: CardAction = None
-
 	def __init__(self):
+		self._uniqueIndex: int = None
+		self._name: str = None
+		self._information: str = None
+
+		self._type: CardAction = None
+
 		pass

@@ -56,3 +56,12 @@ class GraphicsObject:
 
 	def getAllLineElements(self):
 		return self._allLineElements
+
+	def getCentre(self):
+		pass
+
+	def rotate(self, angle):
+		pass
+
+	def translate(self, x, y):
+		pass

@@ -1,8 +1,11 @@
 import matplotlib.pyplot as plt
+
+from src.board.player import Player
 from src.graphics.graphics_object import GraphicsObject
 
 class Board:
 
+	_players: [Player] = []
 	_graphicsObjects: [GraphicsObject] = []
 
 	def __init__(self):
@@ -34,7 +37,7 @@ class Board:
 						.setAngle(absolute=45).moveBy(50) \
 						.setAngle(relative=90).moveBy(50) \
 						.setAngle(relative=90).moveBy(50) \
-						.setAngle(relative=90).moveBy(50).endElements() \
+						.setAngle(relative=90).moveBy(50).endElements()
 
 		self.addGraphicsObject(greenRectangle)
 

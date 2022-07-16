@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-class LineElements(object):
+class LineElements:
 
 	_xCoordinates = []
 	_yCoordinates = []

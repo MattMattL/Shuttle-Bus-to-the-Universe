@@ -2,10 +2,12 @@ import matplotlib.pyplot as plt
 
 from src.board.player import Player
 from src.graphics.graphics_object import GraphicsObject
+from src.board.land import Land
 
 class Board:
 
 	_players: [Player] = []
+	_lands: [Land] = []
 	_graphicsObjects: [GraphicsObject] = []
 
 	def __init__(self):

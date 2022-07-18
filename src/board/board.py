@@ -9,29 +9,34 @@ class Board:
 
 	def __init__(self):
 		# global
-		self.PLOT_MARGIN = 1
-		self.PLOT_SIZE = 100
-
 		self._players: [Player] = []
 		self._lands: [Land] = []
+
+		self._figure = plt.figure(figsize=(10, 6))
 		self._graphicsObjects: [GraphicsObject] = []
 
-		# set graphics properties
-		figure = plt.figure(figsize=(7, 7))
+		# add panels
+		self._boardPanel = self._addPanel([0.01, 0.01, 0.588, 0.98], 100, 1)
+		self._controlPanel = self._addPanel([0.6, 0.01, 0.39, 0.98], 100, 1)
 
-		plt.xlim(-self.PLOT_MARGIN, self.PLOT_SIZE + self.PLOT_MARGIN)
-		plt.ylim(-self.PLOT_MARGIN, self.PLOT_SIZE + self.PLOT_MARGIN)
-		plt.axis("off")
+		self.addGraphicsObject(ShapeData().GREEN_SQUARES_EXAMPLE)
+		self.addGraphicsObject(ShapeData().BLUE_SQUARES_EXAMPLE)
 
-		# draw the basic map
-		plt.plot([0, self.PLOT_SIZE], [0, 0], color='black', linewidth=1)
-		plt.plot([self.PLOT_SIZE, self.PLOT_SIZE], [0, self.PLOT_SIZE], color='black', linewidth=1)
-		plt.plot([self.PLOT_SIZE, 0], [self.PLOT_SIZE, self.PLOT_SIZE], color='black', linewidth=1)
-		plt.plot([0, 0], [self.PLOT_SIZE, 0], color='black', linewidth=1)
+	def _addPanel(self, location: list, size: int, margin: int):
+		axes = plt.axes(location)
 
-		shapeData = ShapeData()
-		self.addGraphicsObject(shapeData.GREEN_SQUARES_EXAMPLE)
-		self.addGraphicsObject(shapeData.BLUE_SQUARES_EXAMPLE)
+		# set size
+		axes.set_xlim(-margin, size + margin)
+		axes.set_ylim(-margin, size + margin)
+		axes.axis("off")
+
+		# draw boundary lines
+		axes.plot([0, size], [0, 0], color='black', linewidth=1)
+		axes.plot([size, size], [0, size], color='black', linewidth=1)
+		axes.plot([size, 0], [size, size], color='black', linewidth=1)
+		axes.plot([0, 0], [size, 0], color='black', linewidth=1)
+
+		return axes
 
 	def addGraphicsObject(self, object: GraphicsObject):
 		self._graphicsObjects.append(object)
@@ -41,7 +46,7 @@ class Board:
 			allLineElements = object.getAllLineElements()
 
 			for lineElement in allLineElements:
-				plt.plot(lineElement.getXCoordinates(),
+				self._boardPanel.plot(lineElement.getXCoordinates(),
 						lineElement.getYCoordinates(),
 						color=lineElement.getColor(),
 						linewidth=lineElement.getThickness())
